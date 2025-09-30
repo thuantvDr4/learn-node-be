@@ -18,6 +18,9 @@
   "homepage": "https://github.com/thuantvDr4/learn-node-be#readme",
   "description": "",
   "dependencies": {
-    "express": "^5.1.0"
+    "compression": "^1.8.1",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.1"
   }
 }
