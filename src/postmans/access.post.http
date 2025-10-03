@@ -3,9 +3,10 @@
 
 POST {{url_dev}}/shop/signup
 Content-Type: application/json
+x-api-key:a1585548634dc4977ae1f167ac7d8fe2397e191608e0d9209f31bfd45941df61e25f6dff10b7bba197e34aaffba28aa189ef0a40932741aef491eb1ca4052c82
 
 {
   "name": "ThuanCafe",
-  "email": "tvt01@gmail.com",
+  "email": "tvt02@gmail.com",
   "password": "123456"
 }
