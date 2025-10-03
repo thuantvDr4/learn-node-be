@@ -10,6 +10,10 @@ var keyTokenSchema = new Schema(
       required: true,
       ref: "Shop",
     },
+    privateKey: {
+      type: String,
+      require: true,
+    },
     publicKey: {
       type: String,
       required: true,

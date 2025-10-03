@@ -4,12 +4,12 @@
 const keyTokenModel = require("../models/keyToken.model");
 
 class KeyTokenService {
-  static createkeyToken = async ({ userId, publicKey }) => {
+  static createkeyToken = async ({ userId, publicKey, privateKey }) => {
     try {
-      const publicKeyStr = publicKey.toString();
       const token = await keyTokenModel.create({
         user: userId,
-        publicKey: publicKeyStr,
+        publicKey,
+        privateKey,
       });
       return token ? token.publicKey : null;
     } catch (error) {
