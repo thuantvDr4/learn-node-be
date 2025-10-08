@@ -1,3 +1,4 @@
+// @ts-nocheck
 require("dotenv").config();
 const compression = require("compression");
 const express = require("express");
@@ -23,6 +24,21 @@ const { checkOverload } = require("./helpers/check.connect");
 
 //--init routes
 app.use("/", require("./routes"));
-//--handing errors
+
+//--handing errors// must be after routes
+app.use((req, res, next) => {
+  const error = new Error("Not Found");
+  error.status = 404;
+  next(error);
+});
+
+app.use((error, req, res, next) => {
+  const statusCode = error.status || 500;
+  return res.status(statusCode).json({
+    status: "error",
+    code: statusCode,
+    message: error.message || "Internal server error",
+  });
+});
 
 module.exports = app;
